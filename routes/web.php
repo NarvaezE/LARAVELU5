@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,10 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+;
 //primero se define el nombre de la ruta
 Route::get('/saludo', function () {
     return "Puto sierra";
@@ -32,4 +30,16 @@ Route::get('/suma/{num1}/{num2}', function ($num1,$num2) {
 //opcionales ? 
 Route::get('/multi/{num1}/{num2}/{num3?}', function ($num1, $num2, $num3 = 1) {
     return $num1*$num2*$num3;
+});*/
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::get('/users', [UserController::class, 'index']);//Index sirve para consultar los registros
+
+Route::get('/users/create',[UserController::class, 'create']);
+
+Route::get('/users/{id}',[UserController::class, 'show']);
+
+//store es donde se envian los forms
+Route::post('/users', [UserController::class,'store']);
