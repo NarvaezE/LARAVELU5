@@ -12,9 +12,16 @@
     @csrf <!-- Genera un token -->
     <label>Nombre</label>
     <input type="text" name="name">
+    <br>
     <label>Email</label>
     <input type="email" name="email">
-
+    <br>
+    <label>Password</label>
+    <input type="password" name="password">
+    <br>
+    <label>Phone number</label>
+    <input type="number" name="phone">
+    <br>
     <button>
       Guardar
     </button>
