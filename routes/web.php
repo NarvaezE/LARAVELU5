@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,3 +44,12 @@ Route::get('/users/{id}',[UserController::class, 'show']);
 
 //store es donde se envian los forms
 Route::post('/users', [UserController::class,'store']);
+
+Route::get('/clients', [ClientController::class, 'index']);//Index sirve para consultar los registros
+
+Route::get('/clients/create',[ClientController::class, 'create']);
+
+Route::get('/clients/{id}',[ClientController::class, 'show']);
+
+//store es donde se envian los forms
+Route::post('/clients', [ClientController::class,'store']);
