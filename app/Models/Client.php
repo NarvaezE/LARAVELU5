@@ -7,5 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    use HasFactory;
+    use  HasFactory;
+
+    protected $table = 'client';
+    protected $fillable = [
+        'name',
+        'lastname',
+        'email',
+        'phone_number',
+
+
+    ];
+
+    protected $casts = [
+        'updated_at' => 'datetime',
+        'created_at' => 'datetime',
+    ];
+
+
+
 }

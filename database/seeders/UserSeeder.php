@@ -17,16 +17,16 @@ class UserSeeder extends Seeder
     {
         $user = new User();
         $user->name = 'Edgar';
-       
+
         $user->email = 'e@gmail.com';
-        $user->password = 'pass';
+        $user->password =bcrypt ('pass');
         $user->save();
 
         $user = new User();
         $user->name = 'Juan';
-    
+
         $user->email = 'jm@gmail.com';
-        $user->password = 'pass1';
+        $user->password =bcrypt ( 'pass1');
         $user->save();
     }
 }
