@@ -20,7 +20,7 @@
             @foreach ($users as $user )
                 <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
-                <a href="{{url('users/')}}">Editar</a>
+                <a href="{{url('users/'.$user->id)}}">Editar</a>
                 <br>
 
             @endforeach

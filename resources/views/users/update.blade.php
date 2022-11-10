@@ -17,7 +17,7 @@
         <br>
 
         <label>Phone number</label>
-        <input type="number" value="{{$user->phone_number}}" name="phone">
+        <input type="number" value="{{$user->phone}}" name="phone">
         <br>
         <button>
           Editar
