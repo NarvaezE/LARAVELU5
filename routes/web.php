@@ -41,22 +41,27 @@ Route::get('/login', function () {
 Route::get('/home', function () {
     return view('auth.home');
 })->name('home');
+//Los middleware tambien nos sirven para administrar las vistas de los usuarios dependiendo del rol
+Route::middleware(['auth'])->group(function () {
+    Route::get('/users', [UserController::class, 'index']);//Index sirve para consultar los registros
+
+    Route::get('/users/create',[UserController::class, 'create']);
+
+    Route::get('/users/{id}',[UserController::class, 'show']);
+
+    //store es donde se envian los forms
+    Route::post('/users', [UserController::class,'store']);
+
+    Route::get('/clients', [ClientController::class, 'index']);//Index sirve para consultar los registros
+
+    Route::get('/clients/create',[ClientController::class, 'create']);
+
+    Route::get('/clients/{id}',[ClientController::class, 'show']);
+
+    //store es donde se envian los forms
+    Route::post('/clients', [ClientController::class,'store']);
+
+});
 
 
-Route::get('/users', [UserController::class, 'index']);//Index sirve para consultar los registros
 
-Route::get('/users/create',[UserController::class, 'create']);
-
-Route::get('/users/{id}',[UserController::class, 'show']);
-
-//store es donde se envian los forms
-Route::post('/users', [UserController::class,'store']);
-
-Route::get('/clients', [ClientController::class, 'index']);//Index sirve para consultar los registros
-
-Route::get('/clients/create',[ClientController::class, 'create']);
-
-Route::get('/clients/{id}',[ClientController::class, 'show']);
-
-//store es donde se envian los forms
-Route::post('/clients', [ClientController::class,'store']);

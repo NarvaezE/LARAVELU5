@@ -14,7 +14,8 @@ class UserController extends Controller
     public function index()
     {
         //return User::all();
-        return User::select('name')->get();
+        $users = User::all();
+        return view ('users.index',compact('users'));
     }
 
     /**
@@ -36,7 +37,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user=User::create($request->all());
-        return $user;   
+        return $user;
     }
 
     /**
@@ -48,7 +49,8 @@ class UserController extends Controller
     public function show($id)
     {
 
-        return User::find($id);
+        $user = User::find($id);
+        return view ('users.update',compact('user'));
     }
 
     /**
@@ -59,7 +61,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
+
     }
 
     /**
