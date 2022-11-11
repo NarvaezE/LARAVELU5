@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Editar</title>
 </head>
 <body>
-    <form method="post" action="http://127.0.0.1:8000/users/">
+    <h1>Editar Usuario</h1>
+    <form method="post" action="{{  url('/users')}}">
         @csrf <!-- Genera un token -->
+        @method('PUT') <!-- Se pone el metodo put para darle a entender que se quiere actualizar ek registro -->
+        <input type="hidden" value="{{ $user->id}}" name="id"/> <!-- Mandamos el i del user por un input hidden -->
         <label>Nombre</label>
         <input type="text" value="{{$user->name}}" name="name">
         <br>
@@ -16,9 +19,6 @@
         <input type="email" value="{{$user->email}}" name="email">
         <br>
 
-        <label>Phone number</label>
-        <input type="number" value="{{$user->phone}}" name="phone">
-        <br>
         <button>
           Editar
         </button>

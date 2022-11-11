@@ -52,6 +52,8 @@ Route::middleware(['auth'])->group(function () {
     //store es donde se envian los forms
     Route::post('/users', [UserController::class,'store']);
 
+    Route::put('/users', [UserController::class,'update']);
+
     Route::get('/clients', [ClientController::class, 'index']);//Index sirve para consultar los registros
 
     Route::get('/clients/create',[ClientController::class, 'create']);

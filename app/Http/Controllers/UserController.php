@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('create_user');
+        return view('users.create_user');
     }
 
     /**
@@ -71,9 +71,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = User::find($request->id);
+
+        if ($user){
+            $user->update($request->all());
+            
+        }
     }
 
     /**

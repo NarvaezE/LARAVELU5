@@ -19,9 +19,6 @@
     <label>Password</label>
     <input type="password" name="password">
     <br>
-    <label>Phone number</label>
-    <input type="number" name="phone">
-    <br>
     <button>
       Guardar
     </button>
