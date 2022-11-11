@@ -34,7 +34,8 @@
                         <!-- start page title -->
                         @include('layouts.bread')
                         <!-- end page title -->
-
+                        <!-- yield nos sirve para implementar contenido de otras vista en una plantilla -->
+                        @yield('contenido')
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
